@@ -4,9 +4,20 @@
     {% part field label %}
     <h6 for="{{ bound_field.id_for_label }}" class="{% part field add_label_class %}{{ form_label_class }}{% endpart %}">
         {{ bound_field.label }}
-        <a href="%s%s" class="add-another" id="add_id_{{ bound_field.html_name }}" onclick="return showAddAnotherPopup(this);">
-            <i class="mdi-content-add"></i>
-        </a>
+        {# TODO: conseguir pegar a url dos apps dinamicamente para não precisar dos if's abaixo #}
+        {% if field.label == "Visitante" %}
+            <a href="/admin/visitors/visitor/add/?_to_field=id" class="add-another" id="add_id_{{ bound_field.html_name }}" onclick="return showAddAnotherPopup(this);">
+                <i class="mdi-content-add"></i>
+            </a>
+        {% elif field.label == "Anfitrião" %}
+            <a href="/admin/auth/user/add/?_to_field=id" class="add-another" id="add_id_{{ bound_field.html_name }}" onclick="return showAddAnotherPopup(this);">
+                <i class="mdi-content-add"></i>
+            </a>
+        {% elif field.label == "Empresa" %}
+            <a href="/admin/companies/company/add/?_to_field=id" class="add-another" id="add_id_{{ bound_field.html_name }}" onclick="return showAddAnotherPopup(this);">
+                <i class="mdi-content-add"></i>
+            </a>
+        {% endif %}
     </h6>
     {% endpart %}
     {% part field help_text %}{% endpart%}

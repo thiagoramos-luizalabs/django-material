@@ -99,7 +99,7 @@ body {
 }
 
 ul.side-nav.fixed.module-menu {
-    overflow:scroll;
+    overflow: hidden;
 }
 
 ul.side-nav.fixed.module-menu li a {
@@ -109,7 +109,7 @@ ul.side-nav.fixed.module-menu li a {
 }
 
 ul.side-nav.module-menu .collapsible-body li.active, .side-nav.fixed .collapsible-body li.active {
-    background: #4CAF50;
+    background: #0083ac;
 }
 
 ul.side-nav.module-menu .collapsible-body li a {
@@ -138,10 +138,6 @@ ul.side-nav.module-menu li.active>a>span.badge {
 
 .side-nav.fixed .collapsible-body li.active>a {
     color: #fff;
-}
-
-::-webkit-scrollbar {
-    display: none;
 }
 
 /*
@@ -247,14 +243,12 @@ ul.side-nav.module-menu li.active>a>span.badge {
 .filters a {
     margin-right: 0;
 }
-.filters.card {
-    overflow:initial;
-}
+
 .filters #changelist-search-button {
     z-index:1000;
     position:absolute;
     right:15px;
-    top:0px;
+    top:15px;
 }
 .fixedHeader th {
     background: white;
@@ -421,8 +415,7 @@ ul.side-nav.module-menu li.active>a>span.badge {
     }
 
     .change-form .multiselect .selector-available {
-        width: calc(50% - 30px);
-        width: -moz-calc(50% - 30px)
+        width: calc(50% - 30px)
     }
 
     .change-form .multiselect .selector-available select {
@@ -435,8 +428,7 @@ ul.side-nav.module-menu li.active>a>span.badge {
     }
 
     .change-form .multiselect .selector-chosen {
-        width: calc(50% - 30px);
-        width: -moz-calc(50% - 30px)
+        width: calc(50% - 30px)
     }
 
     .change-form .multiselect .selector-chosen select {

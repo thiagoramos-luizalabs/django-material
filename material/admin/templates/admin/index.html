@@ -2,7 +2,7 @@
 {% load i18n admin_static %}
 
 {% block breadcrumbs_items %}
-<a href="{% url 'admin:index' %}">{% trans "All apps" %}</a>
+<a href="{% url 'admin:index' %}">All apps</a>
 {% endblock %}
 
 {% block content %}
@@ -16,7 +16,7 @@
                     <div class="row">
                         {% for model in app.models %}
                         <div class="app-item col s6 m6 l4">
-                            <a class="waves-effect waves-light green-text text-lighten-2" href="{{ model.admin_url }}">
+                            <a class="waves-effect waves-light blue-text text-lighten-2" href="{{ model.admin_url }}">
                                 <i class="fa fa-3x adm-app-default adm-{{ app.app_label }}-{{ model.object_name|lower }}"></i>
                                 <h6 style="truncate word-wrap: break-word;">{{ model.name }}</h6>
                             </a>
