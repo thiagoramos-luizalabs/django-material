@@ -1,5 +1,6 @@
 {% load admin_static material_admin %}{% load firstof from future %}<!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE|default:"en-us" }}">
+{% load adminfilters %}
+<html lang="{{ LANGUAGE_CODE|default:"pt-BR" }}">
     <head>
         <title>{% block title %}{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -25,7 +26,7 @@
         {% if user.is_authenticated %}
         <ul id="user-menu" class="dropdown-content">
             {% block user_menu %}
-            <li><a href="/accounts/profile/">{% trans 'Profile' %}</a></li>
+            {#<li><a href="/accounts/profile/">{% trans 'Profile' %}</a></li>#}
             <li><a href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a></li>
             {% block user_menu_extra %}{% endblock %}
             {% endblock %}
@@ -52,7 +53,7 @@
                     </li>
 
                     {% block breadcrumbs_left %}
-                    {% block back_link %}<li class="no-padding"><a class="collapsible-header no-pjax" href="/admin/"><i class="mdi-navigation-arrow-back"></i>home</a></li>{% endblock %}
+                    {#% block back_link %}<li class="no-padding"><a class="collapsible-header no-pjax" href="/admin/"><i class="mdi-navigation-arrow-back"></i>home</a></li>{% endblock %#}
                     <li class="no-padding active">
                         <a class="collapsible-header active no-pjax" href="/admin/"><i class="mdi-action-settings-applications"></i> Administração</a>
                         <div class="collapsible-body" style="display:block">
@@ -60,7 +61,7 @@
                                 {% get_app_list request as app_list %}
                                 {% for app in app_list %}
                                 <li class="header{% if app.active %} active{% endif %}">
-                                    <a class="collapsible-header{% if app.active %} active{% endif %}">{{ app.name|truncatechars:23 }}</a>
+                                    <a class="collapsible-header{% if app.active %} active{% endif %}">{{ app.name|custom_app_label|truncatechars:23 }}</a>
                                     <div class="collapsible-body" {% if app.active %}style="display:block"{% endif %}>
                                         <ul>
                                             {% for model in app.models %}

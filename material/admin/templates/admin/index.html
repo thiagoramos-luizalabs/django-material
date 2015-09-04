@@ -1,5 +1,6 @@
 {% extends "admin/base_site.html" %}
 {% load i18n admin_static %}
+{% load adminfilters %}
 
 {% block breadcrumbs_items %}
 <a href="{% url 'admin:index' %}">{% trans "Aplicativos" %}</a>
@@ -12,7 +13,7 @@
         <div class="col s12 m6 l6 app">
             <div class="card">
                 <div class="card-content">
-                    <span class="card-title black-text">{{ app.name }}</span>
+                    <span class="card-title black-text">{{ app.name|custom_app_label }}</span>
                     <div class="row">
                         {% for model in app.models %}
                         <div class="app-item col s6 m6 l4">
