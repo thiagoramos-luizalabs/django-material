@@ -6,15 +6,15 @@
         {{ bound_field.label }}
         {# TODO: conseguir pegar a url dos apps dinamicamente para não precisar dos if's abaixo #}
         {% if field.label == "Visitante" %}
-            <a href="/admin/visitors/visitor/add/?_to_field=id" class="add-another" id="add_id_{{ bound_field.html_name }}" onclick="return showAddAnotherPopup(this);">
+            <a href="/admin/visitors/visitor/add/?_to_field=id&_popup=1" class="add-another" id="add_id_{{ bound_field.html_name }}" onclick="return showAddAnotherPopup(this);">
                 <i class="mdi-content-add"></i>
             </a>
         {% elif field.label == "Anfitrião" %}
-            <a href="/admin/auth/user/add/?_to_field=id" class="add-another" id="add_id_{{ bound_field.html_name }}" onclick="return showAddAnotherPopup(this);">
+            <a href="/admin/auth/user/add/?_to_field=id&_popup=1" class="add-another" id="add_id_{{ bound_field.html_name }}" onclick="return showAddAnotherPopup(this);">
                 <i class="mdi-content-add"></i>
             </a>
         {% elif field.label == "Empresa" %}
-            <a href="/admin/companies/company/add/?_to_field=id" class="add-another" id="add_id_{{ bound_field.html_name }}" onclick="return showAddAnotherPopup(this);">
+            <a href="/admin/companies/company/add/?_to_field=id&_popup=1" class="add-another" id="add_id_{{ bound_field.html_name }}" onclick="return showAddAnotherPopup(this);">
                 <i class="mdi-content-add"></i>
             </a>
         {% endif %}
