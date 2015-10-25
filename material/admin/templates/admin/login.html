@@ -37,6 +37,9 @@
                     <div class="card-action right-align">
                         <button type="submit" class="btn btn-primary">{% trans 'Log in' %}</button>
                     </div>
+                    <div class="clear" style="text-align: center; padding-top: 20px"> 
+                        <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}"><img src="{% static 'images/sign-in-google.png' %}" border="0"></a> 
+                    </div>
                 </form>
             </div>
         </div>
